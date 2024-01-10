@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com" rel="stylesheet"></script>
+    <link rel="stylesheet" href="/static/main.css">
+    <title>form</title>
+</head>
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Hotel Franchise Management</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-blue-900 " href="/">Home</a>
+            <a class="mr-5 hover:text-blue-900 " href="/about-us">About</a>
+            <a class="mr-5 hover:text-blue-900 " href="/services">Services</a>
+            <a class="mr-5 hover:text-blue-900 " href="/contact">Contact</a>
+          </nav>
+          <a href="/">
+            <button class="inline-flex items-center bg-indigo-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">back
+            </button>
+          </a>
+        </div>
+    </header>
+    
+    <section class ="items-center text-gray-900">
+        <h1> Calculator </h1>
+
+    </section>
+
+    <form method ="POST">
+        {% csrf_token %}
+        <br>
+        <label> Value 1 </label>
+        <input type = "text" name ="num1" class="form-control"/><br>
+        <label> Operator </label>
+        <select name = "opr" class="form-control"/>
+            <option value = '+'> + </option>
+            <option value = '-'> - </option>
+            <option value = '*'> * </option>
+            <option value = '/'> / </option>
+        </select><br>
+        <label> Value 2 </label>
+        <input type = "text" name ="num2" class="form-control"/><br>
+        <button type ="submit"> Calculate </button><br>
+        <label>Output</label><br>
+        <input type ="text" value ="{{c}}" class ="form-control"/>
+    </form>
+    {% include "footer.html" %}
+</body>
+</html>

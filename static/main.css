@@ -1,0 +1,33 @@
+nav a{
+        color: #3e4cca;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+}
+
+button{
+    color: #3e4cca;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+}
+
+nav a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #3e4cca;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav a:hover::after{
+    width: 100%;
+}
+
+footer {
+    position: static;
+    margin-left: 38%;
+}
